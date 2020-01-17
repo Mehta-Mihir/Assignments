@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <ul class="navbar_ul">
+        <li class="navbar_li"><a class="navbar_a" href="#home">Home</a></li>
+        <li class="navbar_li"><a class="navbar_a" href="#news">Features</a></li>
+        <li class="navbar_li"><a class="navbar_a" href="#contact">Contact</a></li>
+        <li class="navbar_li"><a class="navbar_a" href="#about">About</a></li>
+        <li class="navbar_li" style="float: right;"><a class="navbar_a" href="#about">About</a></li>
+      </ul>
+
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>Product List</h2>
+            <div class=boxed>
+              <table id="p_table">
+                <tr>
+                  <th>Product Image</th>
+                  <th>Product Name</th>
+                  <th>Product Description</th>
+                  <th>Product Price</th>
+                  <th>Product Quantity</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </table>
+          </div>
+          
+          </div>
+          
+        </div>
+
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>Add Product</h2>
+          Product Name
+          <input type="text" id="pname">
+          <br><br>
+          Product Image
+          <input type="file" id="pimg">
+          <br><br>
+          Description
+          <textarea id="pdesc"></textarea>
+          <br><br>
+        Quantity
+        <input id="pqty" type="text">
+        <br><br>
+        Price
+        <input id="pprice" type="text">
+        <br><br>
+        <button onclick="addProduct()">Add Product</button>
+        </div>
+        <div class="card">
+          <h3>Cart</h3>
+          <div class=boxed>
+            <table id="p_cart_table">
+              <tr>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td id="pname_c">Maria Anders</td>
+                <td id="pprice_c">0</td>
+                <td id="pdesc_c">0</td>
+                <td id="pqty_c">0</td>
+                <td><button>Delete</button></td>
+              </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+    <script src='main.js'></script>
+</body>
+</html>
