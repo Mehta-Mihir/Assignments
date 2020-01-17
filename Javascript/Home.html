@@ -45,7 +45,7 @@
           <input type="text" id="pname">
           <br><br>
           Product Image
-          <input type="file" id="pimg">
+          <input type="file" onchange="readURL(this);" id="pimg">
           <br><br>
           Description
           <textarea id="pdesc"></textarea>
@@ -68,13 +68,6 @@
                 <th>Product Quantity</th>
                 <th>Total</th>
                 <th></th>
-              </tr>
-              <tr>
-                <td id="pname_c">Maria Anders</td>
-                <td id="pprice_c">0</td>
-                <td id="pdesc_c">0</td>
-                <td id="pqty_c">0</td>
-                <td><button>Delete</button></td>
               </tr>
             </table>
         </div>
