@@ -56,6 +56,7 @@ function addProduct()
 
 function addToCart(data1)
 {
+  var c_total=document.getElementById("cart_total");
     var row=document.getElementById(data1);
     var table = document.getElementById("p_table");
     var flag=0;
@@ -101,6 +102,8 @@ function addToCart(data1)
     table.rows[rowIndex].cells[4].innerHTML=parseInt(table.rows[rowIndex].cells[4].innerHTML)-1;
     col3.innerHTML=1;
     col4.innerHTML=parseInt(col2.innerHTML) * parseInt(col3.innerHTML);
+    //ctotal=ctotal+parseInt(col4.innerHTML);
+    //c_total.innerHTML="Total:Rs. "+ctotal;
     col6.innerHTML=table.rows[rowIndex].cells[7].innerHTML;
     row.id="c"+col6.innerHTML;
     console.log(row.id);
@@ -120,6 +123,23 @@ function addToCart(data1)
       //console.log(nodeList[0].disabled=true);
       nodeList[0].disabled=true
     }
+
+
+
+
+    //cart final total
+    var ctotal=0;
+    for (var j = 1 ; j < c_table.rows.length; j++) {
+ 
+      var row = "";
+  
+      for (var k = 0; k < c_table.rows[j].cells.length; k++) {
+            ctotal=parseInt(ctotal)+parseInt(c_table.rows[j].cells[3].innerHTML);
+          }
+          document.getElementById("cart_total").innerHTML="Total:Rs. "+ctotal;
+          //console.log(row);
+      }
+    
 }
 
 function deleteP(idd)
