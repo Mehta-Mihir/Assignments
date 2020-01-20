@@ -156,7 +156,27 @@ function deleteFromCart(idd,data1)
     var rowIndex = document.getElementById(idd).rowIndex;
     //console.log(c_table.rows[rowIndex].cells[2].innerHTML);
     var prod_table=document.getElementById("p_table");
+    try {
     var rowIndex1 = document.getElementById(data1).rowIndex;
+    }
+    catch(err) {
+      if(parseInt(c_table.rows[rowIndex].cells[2].innerHTML)>1){
+      c_table.rows[rowIndex].cells[2].innerHTML=parseInt(c_table.rows[rowIndex].cells[2].innerHTML)-1;
+    c_table.rows[rowIndex].cells[3].innerHTML=parseInt(c_table.rows[rowIndex].cells[1].innerHTML) * parseInt(c_table.rows[rowIndex].cells[2].innerHTML);
+      }
+      else{
+        c_table.deleteRow(rowIndex);
+      }
+
+      //cart final total
+      var ctotal=0;
+      for (var j = 1 ; j < c_table.rows.length; j++) {
+  
+              ctotal=parseInt(ctotal)+parseInt(c_table.rows[j].cells[3].innerHTML);
+              //console.log(ctotal);
+            }
+            document.getElementById("cart_total").innerHTML="Total:Rs. "+ctotal;
+    }
     if(parseInt(c_table.rows[rowIndex].cells[2].innerHTML)>1)
     {
     prod_table.rows[rowIndex1].cells[4].innerHTML=parseInt(prod_table.rows[rowIndex1].cells[4].innerHTML)+1;
