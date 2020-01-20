@@ -63,6 +63,7 @@
 
 .boxed
 {
+  overflow: auto;
   border: 1px solid #111;
   padding: 10px;
   border-spacing: 10px;
@@ -70,12 +71,14 @@
 }
 
 table {
+  overflow: auto;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
 td, th {
+  overflow: auto;
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;

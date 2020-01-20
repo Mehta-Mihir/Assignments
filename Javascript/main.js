@@ -3,6 +3,7 @@ var original=document.getElementById("duplicateRow");
 var or_table=document.getElementById("p_table");
 var c_table=document.getElementById("p_cart_table");
 var img_src;
+
 function addProduct()
 {
   var pn=document.getElementById("pname").value;
@@ -111,7 +112,7 @@ function addToCart(data1)
     var btn1=document.createElement("button");
     console.log(col6.innerHTML);
     //btn1.addEventListener("click",addToCart(row.id));
-    btn1.onclick = function() { deleteFromCart(row.id) }
+    btn1.onclick = function() { deleteFromCart(row.id,data1) }
     var text1=document.createTextNode("Delete");
     btn1.appendChild(text1);
     col5.appendChild(btn1);
@@ -130,15 +131,13 @@ function addToCart(data1)
     //cart final total
     var ctotal=0;
     for (var j = 1 ; j < c_table.rows.length; j++) {
- 
-      var row = "";
-  
-      for (var k = 0; k < c_table.rows[j].cells.length; k++) {
+
             ctotal=parseInt(ctotal)+parseInt(c_table.rows[j].cells[3].innerHTML);
+            //console.log(ctotal);
           }
           document.getElementById("cart_total").innerHTML="Total:Rs. "+ctotal;
           //console.log(row);
-      }
+      
     
 }
 
@@ -151,13 +150,46 @@ function deleteP(idd)
     c_table.deleteRow(rowIndex);
 }
 
-function deleteFromCart(idd)
+function deleteFromCart(idd,data1)
 {
     var c_table=document.getElementById("p_cart_table");
     var rowIndex = document.getElementById(idd).rowIndex;
+    //console.log(c_table.rows[rowIndex].cells[2].innerHTML);
+    var prod_table=document.getElementById("p_table");
+    var rowIndex1 = document.getElementById(data1).rowIndex;
+    if(parseInt(c_table.rows[rowIndex].cells[2].innerHTML)>1)
+    {
+    prod_table.rows[rowIndex1].cells[4].innerHTML=parseInt(prod_table.rows[rowIndex1].cells[4].innerHTML)+1;
+    c_table.rows[rowIndex].cells[2].innerHTML=parseInt(c_table.rows[rowIndex].cells[2].innerHTML)-1;
+    c_table.rows[rowIndex].cells[3].innerHTML=parseInt(c_table.rows[rowIndex].cells[1].innerHTML) * parseInt(c_table.rows[rowIndex].cells[2].innerHTML);
+    }
+    else {
+    //var rowIndex = document.getElementById(idd).rowIndex;
     //console.log(rowIndex);
     //console.log("success delete button: "+idd);
+    prod_table.rows[rowIndex1].cells[4].innerHTML=parseInt(prod_table.rows[rowIndex1].cells[4].innerHTML)+1;
     c_table.deleteRow(rowIndex);
+    }
+
+    //c_table.rows[rowIndex].cells[3].innerHTML=parseInt(c_table.rows[rowIndex].cells[1].innerHTML) * parseInt(c_table.rows[rowIndex].cells[2].innerHTML);
+    
+    //cart final total
+        var ctotal=0;
+        for (var j = 1 ; j < c_table.rows.length; j++) {
+    
+                ctotal=parseInt(ctotal)+parseInt(c_table.rows[j].cells[3].innerHTML);
+                //console.log(ctotal);
+              }
+              document.getElementById("cart_total").innerHTML="Total:Rs. "+ctotal;
+
+
+
+    if(parseInt(prod_table.rows[rowIndex].cells[4].innerHTML)>parseInt(0))
+    {
+      nodeList=prod_table.rows[rowIndex].cells[5].childNodes;
+      //console.log(nodeList[0].disabled=true);
+      nodeList[0].disabled=false;
+    }
 }
 
 function readURL(input) {
