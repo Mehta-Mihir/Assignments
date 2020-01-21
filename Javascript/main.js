@@ -174,6 +174,7 @@ function deleteFromCart(idd,data1)
   
               ctotal=parseInt(ctotal)+parseInt(c_table.rows[j].cells[3].innerHTML);
               //console.log(ctotal);
+              
             }
             document.getElementById("cart_total").innerHTML="Total:Rs. "+ctotal;
     }
