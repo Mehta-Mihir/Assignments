@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>DragMin - Minimalistic Dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid d-flex">
+      <div class="d-flex flex-column">
+      <ul class="navbar-nav sidebar d-flex align-items-left p-1" id="side1">
+        <a class="mt-2" style="text-align: center;">
+          <i class='fas fa-dragon' style='font-size:50px'></i>
+          <span style="font-size: 24px; color: rgb(255, 255, 255);">DragMin</span>
+        </a>
+        <hr>
+        <li class="nav-item active p-2">
+          <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+        <hr>
+        <div class="sidebar-heading">
+          INTERFACE
+        </div>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
+          </a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Utilities</span>
+          </a>
+        </li>
+        <hr>
+        <div class="sidebar-heading">
+          ADDONS
+        </div>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+          </a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span>
+          </a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span>
+          </a>
+        </li>
+        <hr>
+      </ul>
+    </div>
+      <div id="content-wrapper">
+        <div id="content">
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="list-style: none;">
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Mihir Mehta <img src="/avatar-367-456319.svg" height="35px" width="35px" class="img-profile rounded-circle"> </a>
+                  
+              </li>
+          </ul>
+          </nav>
+          <div class="d-flex flex-column justify-content-between p-3 m-1" style="background-color: rgb(227, 230, 240);">
+        <h1>Dashboard</h1>
+        <div class="row mb-4">
+          <div class="col-3">
+            <div class="card shadow border-left-primary">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col mr-2">
+                    <h5>Earnings(Monthly)</h5>
+                    <h6>$40000</h6>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card shadow border-left-success">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col mr-2">
+                    <h5>Earnings(Annual)</h5>
+                    <h6>$215000</h6>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card shadow border-left-info">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col mr-2">
+                    <h5>Sales</h5>
+                    <h6>$145000</h6>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card shadow border-left-warning">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col mr-2">
+                    <h5>Pending Requests</h5>
+                    <h6>18</h6>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow">
+              <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary">Latest Transactions</h6>
+              </div>
+              <div class="card-body">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>$100</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>$115</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>$167</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
