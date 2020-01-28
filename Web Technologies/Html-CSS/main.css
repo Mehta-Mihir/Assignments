@@ -1,0 +1,34 @@
+footer{
+    display: block;
+    border: 3px solid cadetblue;
+    padding: 5px;
+    text-align: center;
+    background-color: antiquewhite;
+    position: relative;
+    opacity: 1;
+}
+body{
+    background-image: url("developers-doing-discussion-about-wireframe-1681821-1429090.jpg");
+    background-position: center;
+    background-size: cover;
+}
+header{
+    display: block;
+    border: 3px solid cadetblue;
+    padding: 5px;
+    text-align: center;
+    background-color: antiquewhite;
+    position: relative;
+    opacity: 1;
+}
+fieldset{
+    padding: 16px;
+    border: 2px double green;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+.hide {
+    display:none;
+   }

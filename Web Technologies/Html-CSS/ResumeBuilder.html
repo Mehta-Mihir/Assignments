@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Resume Builder</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header><p>This is the header</p></header>
+    <script>
+        function ageCalc() {
+            var day=document.getElementById("bday").valueAsDate.getDate();
+            var month=document.getElementById("bday").valueAsDate.getMonth()+1;
+            var year=document.getElementById("bday").valueAsDate.getFullYear();
+            var date1=day.toString()+"/"+month.toString()+"/"+year.toString();
+            var date2=Date.parse(document.getElementById("bday").valueAsDate);
+            var date3 = new Date();
+            console.log(date3-date2)
+            console.log(date2);
+            console.log(day);
+            console.log(month);
+            console.log(year);
+        }
+    </script>
+    <h1>Enter your details below</h1>
+    <fieldset>
+    <legend><h3>Enter your basic informtion below:</h3></legend>
+    <legend>
+        <fieldset>
+            <legend><b>Your Name:</b></legend>
+        <select>
+            <option value="mr">Mr.</option>
+            <option value="ms">Ms.</option>
+            <option value="mrs">Mrs.</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>First Name:</label>
+        <input type="text" name="FName" placeholder="Enter your first name here" size="30px">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Last Name:</label>
+        <input type="text" name="LName" placeholder="Enter your last name here" size="30px">
+        <br><br>
+    </fieldset>
+    <fieldset>
+        <legend><b>Select Languages Known:</b></legend>
+        English:<input type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Hindi:<input type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Gujarati:<input type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Marathi:<input type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Bengali:<input type="checkbox" >
+        <br><br>
+    </fieldset>
+    <fieldset>
+        <legend><b>Select background color for your resume(Optional):</b></legend>
+        <input type="color" name="favcolor">
+        <br><br>
+    </fieldset>
+    <fieldset>
+        <legend><b>Select your birth date:</b></legend>
+        <input type="date" id="bday" name="bdate">
+        <br><br>
+    </fieldset>
+    <fieldset>
+       <legend><b>Enter your email address: </b></legend><input type="email" name="emailaddr">
+        <br><br>
+    </fieldset>
+    
+    <fieldset>
+       <legend><b> Resume Should Include Your Picture?:</b></legend><input type="radio" name="rpicradio" id="rpic1" checked value="rpicincluded" checked>Include &nbsp;&nbsp;&nbsp; <input type="radio" name="rpicradio" id="rpic" onclick="hideimg()" name="rpicnotincluded">Omit
+        <br><br>
+    </fieldset>
+    <fieldset id="hideimage">
+        <legend><b>Upload your picture:</b></legend><input type="file" name="uploadedpic">
+         <br><br>
+     </fieldset>
+       <fieldset>
+       <legend><b>Resume Template:</b></legend><input type="text" disabled value="Free" name="rtemplate">
+        <br><br>
+    </fieldset>
+    <fieldset>
+     <legend><b>Mobile Number:</b></legend><input type="tel" name="mnumber">
+        <br><br>
+    </fieldset>
+    <fieldset>
+       <legend><b> Total Industry Experience:</b></legend><input type="range" min="1" max="30" value="5" id="expslider">
+        <p>Value:<span id="printexpvalue"></span></p>
+        <script>
+            var slider=document.getElementById("expslider");
+            var output=document.getElementById("printexpvalue");
+            slider.oninput=function(){
+                output.innerHTML = this.value
+            }
+        </script>
+    </fieldset>
+    <br><br>
+        <input type="reset" style="margin: auto; display: block;">
+        <br>
+        <input type="image" src="img_submit.gif" alt="Submit" style="margin: auto; display: block;"> 
+        <br>
+        <button onclick="ageCalc()" style="margin: auto; display: block;">Click me</button> 
+    </form>
+
+</fieldset>
+
+    <br><br><br><br><br>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+</body>
+</html>
